@@ -13,23 +13,23 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// .------------------------------------------------------.   .-----------------------------------------------.
-// | ESC         | Q | W       | E        | R       | T   |   | Y   | U       | I   | O       | P | BKSP      |
-// | TAB / SHIFT | A | SYM / S | NUM / D  | NAV / F | G   |   | H   | NAV / J | K   | SYM / L | ; | ' / SHIFT |
-// | CTRL        | Z | X       | C        | V       | B   |   | N   | M       | ,   | .       | / | CTRL      |
-// `-------------------------- | OPT      | CMD     | SPC |   | SPC | CMD     | OPT | ------------------------`
+// .------------------------------------------------------.   .--------------------------------------------------.
+// | ESC         | Q | W       | E        | R       | T   |   | Y   | U       | I   | O       | P | BKSP         |
+// | TAB / SHIFT | A | SYM / S | NUM / D  | NAV / F | G   |   | H   | NAV / J | K   | SYM / L | ; | ENTR / SHIFT |
+// | CTRL        | Z | X       | C        | V       | B   |   | N   | M       | ,   | .       | / | CTRL         |
+// `-------------------------- | OPT      | CMD     | SPC |   | SPC | CMD     | OPT | ---------------------------`
 //                            `---------------------------`   `----------------------`
                         
                         bindings = <
    &kp ESC        &kp Q &kp W   &kp E    &kp R    &kp T       &kp Y     &kp U    &kp I     &kp O    &kp P    &kp BSPC
-   &mt LSHIFT TAB &kp A &lt 2 S &lt 3 D  &lt 1 F  &kp G       &kp H     &lt 1 J  &kp K     &lt 2 L  &kp SEMI &mt RSHIFT SINGLE_QUOTE
+   &mt LSHIFT TAB &kp A &lt 2 S &lt 3 D  &lt 1 F  &kp G       &kp H     &lt 1 J  &kp K     &lt 2 L  &kp SEMI &mt RSHIFT ENTER
    &kp LCTRL      &kp Z &kp X   &kp C    &kp V    &kp B       &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RCTRL
                                 &kp LALT &kp LGUI &kp SPACE   &kp SPACE &kp RGUI &kp RALT
                         >;
                 };
 
                 nav_layer {
-// .----------------------------------------.   .--------------------------------------.
+// .----------------------------------------.   .---------------------------------------.
 // | BTX | BT1  | BT2  | BT3  | BT4  | BT5  |   |      | HOME | UP   | END |     | DEL  |
 // |     | PREV | PLAY | NEXT | VOL+ | MUTE |   | PGUP | LFT  | DWN  | RGT |     | ENTR |
 // |     |      |      |      | VOL- |      |   | PGDN |      |      |     |     |      |
@@ -45,18 +45,18 @@
                 };
 
                 symbol_layer {
-// .------------------------------------.   .-----------------------------------.
-// |  ~  |     |     |     |     |     |   |  ^  |  &  |  [  |  ]  |  *  | BKSP |
-// |  `  |  !  |  @  |  #  |  $  |  %  |   |  -  |  =  |  (  |  )  | "|" | ENTR |
+// .-----------------------------------.   .------------------------------------.
+// |  ~  |     |     |  <  |  >  |     |   |  ^  |  &  |  [  |  ]  |  *  | BKSP |
+// |  `  |  !  |  @  |  #  |  $  |  %  |   |  -  |  =  |  (  |  )  | "|" | '    |
 // |     |     |     |     |     |     |   |  _  |  +  |  {  |  }  |  \  | SHFT |
 // `---------------- |     |     |     |   |     |     |     | -----------------`
 //                  `------------------`   `------------------`
 
                         bindings = <
-   &kp GRAVE  &trans   &trans &trans   &trans   &trans      &kp CARET &kp AMPS  &kp LBKT &kp RBKT &kp KP_MULTIPLY &kp BSPC
-   &kp TILDE  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp LPAR &kp RPAR &kp PIPE        &kp ENTER
+   &kp GRAVE  &trans   &kp LT &kp GT   &trans   &trans      &kp CARET &kp AMPS  &kp LBKT &kp RBKT &kp KP_MULTIPLY &kp BSPC
+   &kp TILDE  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp LPAR &kp RPAR &kp PIPE        &kp SINGLE_QUOTE
    &trans     &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp BSLH        &kp RSHIFT
-                    	      &trans   &trans   &trans      &trans    &trans    &trans
+                              &trans   &trans   &trans      &trans    &trans    &trans
                         >;
                 };
 
